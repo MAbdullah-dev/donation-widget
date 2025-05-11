@@ -45,13 +45,67 @@ class StripeController extends Controller
 
     public function handleSuccess(Request $request)
     {
-        // Handle successful payment
-        return view('donation.success');
+        return response()->make('
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Donation Successful</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                    padding: 50px;
+                    background-color: #f0f8f5;
+                }
+                h1 {
+                    color: #28a745;
+                }
+                a {
+                    text-decoration: none;
+                    color: #007bff;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>🎉 Thank you for your donation!</h1>
+            <p>Your transaction was successful.</p>
+            <a href="/">Return to Home</a>
+        </body>
+        </html>
+    ');
     }
 
     public function handleCancel()
     {
-        // Handle canceled payment
-        return view('donation.canceled');
+        return response()->make('
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Donation Canceled</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                    padding: 50px;
+                    background-color: #fff5f5;
+                }
+                h1 {
+                    color: #dc3545;
+                }
+                a {
+                    text-decoration: none;
+                    color: #007bff;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>❌ Donation was canceled</h1>
+            <p>You can try again if you wish.</p>
+            <a href="/">Return to Home</a>
+        </body>
+        </html>
+    ');
     }
 }
