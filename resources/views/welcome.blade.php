@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>donation widget</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- <link rel="stylesheet" href="{{ asset('CSS/Header.css') }}">
     <link rel="stylesheet" href="{{ asset('CSS/Globalstyle.css') }}"> --}}
     @vite(['resources/css/app.css'])
