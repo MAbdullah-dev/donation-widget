@@ -15,62 +15,72 @@
     <header>
         <div class="inner">
             <div class="logo-img">
-                <img src="{{ asset('svg/logo.svg') }}" alt="">
+                <img src="{{ asset('svg/logo.svg') }}" alt="Logo">
             </div>
-            <div class="nav-links">
+            <button class="hamburger" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links">
                 <ul>
                     <li><a href="#">Find</a></li>
                     <li><a href="#">Become</a></li>
                     <li><a href="#">Forum</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">sign In</a></li>
+                    <li><a href="#">Sign In</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </header>
-<div class="donate-section">
-    <div class="container">
-        <div class="donate-inner">
-            <div class="donate-head d-flex justify-content-between align-items-center">
-                <ul class="d-flex align-items-center list-unstyled m-0">
-                    <li class="me-3">
-                        <img src="{{ asset('images/Image-empty-state.avif') }}" alt="Night Bright Logo" class="donate-logo rounded-circle">
-                    </li>
-                    <li>
-                        <h3 class="donate-org-name mb-0">Night Bright</h3>
-                        <div class="donate-location mt-4">
-                            <h6 class="donate-region">North America</h6>
-                            <h6 class="donate-country d-block">United States</h6>
-                        </div>
-                    </li>
-                </ul>
-                <div class="donate-button">
-                    <button id="donate-btn" class="donate-btn">Donate <img src="{{ asset('svg/arrow.svg') }}" alt=""></button>
-                </div>
-            </div>
-
-            <div class="donate-description mt-4">
-                <p class="donate-text mb-4">Night Bright is a non-profit 501(c)3. We strive to make donating to your favorite causes an enjoyable experience that leads to a deeper connection with the thousands of beautiful people spreading the love of God throughout the globe. Please join us in making it easier to find, fund, and resource missions worldwide.</p>
-
-                <div class="donate-tabs">
-                    <ul class="nav nav-tabs border-0 donate-tabs-list">
-                        <li class="nav-item">
-                            <a class="nav-link active donate-tab-link" href="#">Photos</a>
+    <div class="donate-section">
+        <div class="container">
+            <div class="donate-inner">
+                <div class="donate-head d-flex justify-content-between align-items-center">
+                    <ul class="d-flex align-items-center list-unstyled m-0">
+                        <li class="me-3">
+                            <img src="{{ asset('images/Image-empty-state.avif') }}" alt="Night Bright Logo"
+                                class="donate-logo rounded-circle">
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link donate-tab-link" href="#">Video</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link donate-tab-link" href="#">Causes</a>
+                        <li>
+                            <h3 class="donate-org-name mb-0">Night Bright</h3>
+                            <div class="donate-location mt-4">
+                                <h6 class="donate-region">North America</h6>
+                                <h6 class="donate-country d-block">United States</h6>
+                            </div>
                         </li>
                     </ul>
+                    <div class="donate-button">
+                        <button id="donate-btn" class="donate-btn">Donate <img src="{{ asset('svg/arrow.svg') }}"
+                                alt=""></button>
+                    </div>
+                </div>
+
+                <div class="donate-description mt-4">
+                    <p class="donate-text mb-4">Night Bright is a non-profit 501(c)3. We strive to make donating to your
+                        favorite causes an enjoyable experience that leads to a deeper connection with the thousands of
+                        beautiful people spreading the love of God throughout the globe. Please join us in making it
+                        easier to find, fund, and resource missions worldwide.</p>
+
+                    <div class="donate-tabs">
+                        <ul class="nav nav-tabs border-0 donate-tabs-list">
+                            <li class="nav-item">
+                                <a class="nav-link active donate-tab-link" href="#">Photos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link donate-tab-link" href="#">Video</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link donate-tab-link" href="#">Causes</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Donation Form Overlay -->
-  <div class="donation-form-overlay" id="donationOverlay">
+    <!-- Donation Form Overlay -->
+    <div class="donation-form-overlay" id="donationOverlay">
         <div class="donation-form-container">
             <!-- Donation Form Content -->
             <div class="donation-form-content mx-auto" id="donationFormContent">
@@ -164,7 +174,8 @@
                 <div class="tip-section">
                     <h3>Add a tip to support Night Bright</h3>
                     <p class="tip-description">
-                        Why Tip? Night Bright does not charge any platform fees and relies on your generosity to support this free service.
+                        Why Tip? Night Bright does not charge any platform fees and relies on your generosity to support
+                        this free service.
                     </p>
 
                     <div class="form-group">
@@ -185,7 +196,8 @@
 
                 <div class="payment-footer">
                     <button type="button" class="back-btn" id="backButton">Back</button>
-                    <button type="button" class="finish-btn" id="finishButton">Finish (<span id="final-amount">$0</span>)</button>
+                    <button type="button" class="finish-btn" id="finishButton">Finish (<span
+                            id="final-amount">$0</span>)</button>
                 </div>
             </div>
         </div>
@@ -197,7 +209,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize Stripe with your publishable key
-            const stripe = Stripe('{{ env("STRIPE_KEY") }}');
+            const stripe = Stripe('{{ env('STRIPE_KEY') }}');
             let selectedAmount = 0;
             let selectedMissionary = '';
             let isProcessing = false;
@@ -411,5 +423,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
