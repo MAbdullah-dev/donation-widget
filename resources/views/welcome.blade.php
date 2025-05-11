@@ -106,8 +106,8 @@
                         </div>
                     </div>
 
+                    <label class="section-label">Who are you donating to?</label>
                     <div class="form-group">
-                        <label class="section-label">Who are you donating to?</label>
                         <select id="missionary-select" class="missionary-select">
                             <option value="">Select a missionary</option>
                             <option>Andrii Kuchkuda</option>
@@ -158,9 +158,15 @@
                 <div class="payment-notice">
                     <strong>Credit card processing fees</strong>
                 </div>
+                <label class="section-label">payment method</label>
+                    <div class="form-group">
+                        <select>
+                            <option value="">stripe</option>
+                        </select>
+                    </div>
 
+                <label class="section-label">total</label>
                 <div class="form-group">
-                    <label class="section-label">Select Payment Method</label>
                     <div class="payment-method">
                         <span id="payment-amount">$0.00</span>
                     </div>
@@ -183,8 +189,8 @@
                         <label class="checkbox-label">
                             <input type="checkbox" id="allow-contact">
                             <span class="checkmark"></span>
-                            Allow Night Bright Inc to contact me
                         </label>
+
                     </div>
 
                     <div class="tip-options">
