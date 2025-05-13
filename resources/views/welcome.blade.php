@@ -84,59 +84,63 @@
     <div class="donation-form-overlay" id="donationOverlay">
         <div class="donation-form-container">
             <!-- Donation Form Content -->
+
             <div class="donation-form-content mx-auto" id="donationFormContent">
                 <button class="close-btn">×</button>
-                <h1>DONATE</h1>
-                <h2>Missionary Donation</h2>
-
-                <div class="donation-type-tabs">
-                    <button class="tab-btn active" data-tab="one-time">One-Time</button>
-                    <button class="tab-btn" data-tab="monthly">Monthly</button>
-                </div>
-
-                <form class="donation-form" id="donationForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" id="donor-name" required>
-                            <label for="donor-name">Donor's Name</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="donor-email" required>
-                            <label for="donor-email">Donor's Email</label>
-                        </div>
+                <h2><span>DONATE</span></h2>
+                {{-- <h2>Missionary Donation</h2> --}}
+                <div class="slide-wrapper">
+                    <div class="wrapper-head">
+                        <h3><b>Missionary Donation</b></h3>
                     </div>
-
-                    <label class="section-label">Who are you donating to?</label>
-                    <div class="form-group">
-                        <select id="missionary-select" class="missionary-select">
-                            <option value="">Select a missionary</option>
-                            <option>Andrii Kuchkuda</option>
-                            <option>Annu ss</option>
-                            <option>Brandon Croley</option>
-                            <option>Chris Sheppler</option>
-                            <option>Dan Johnson</option>
-                            <option>Dave and Patti Schatzmann</option>
-                        </select>
-                    </div>
-
-                    <div class="amount-options">
-                        <label class="section-label">Donation Amount</label>
-                        <div class="amount-buttons">
-                            <button type="button" class="amount-btn" data-amount="10">$10</button>
-                            <button type="button" class="amount-btn" data-amount="25">$25</button>
-                            <button type="button" class="amount-btn" data-amount="50">$50</button>
-                            <button type="button" class="amount-btn" data-amount="100">$100</button>
+                    <div class="wrapper-body">
+                        <div class="donation-type-tabs">
+                            <button class="tab-btn active" data-tab="one-time">One-Time</button>
+                            <button class="tab-btn" data-tab="monthly">Monthly</button>
                         </div>
-                        <div class="custom-amount">
-                            <input type="number" id="custom-amount" min="1" placeholder="Other amount">
-                        </div>
-                    </div>
 
-                    <div class="form-group message-group">
-                        <button type="button" class="add-message-btn">+ Add a message</button>
-                        <textarea id="donation-message" class="message-textarea" placeholder="Your message..." style="display: none;"></textarea>
-                    </div>
+                        <form class="donation-form" id="donationForm">
+                            <div class="form-inputs">
+                                <div class="form-group">
+                                    <input type="text" id="donor-name" placeholder="Donor's Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="donor-email" placeholder="Donor's Email" required>
+                                </div>
+                            </div>
 
+                            {{-- <label class="section-label">Who are you donating to?</label> --}}
+                            <div class="form-group">
+                                <select id="missionary-select" class="missionary-select">
+                                    <option value="">Night Bright</option>
+                                    <option>Andrii Kuchkuda</option>
+                                    <option>Annu ss</option>
+                                    <option>Brandon Croley</option>
+                                    <option>Chris Sheppler</option>
+                                    <option>Dan Johnson</option>
+                                    <option>Dave and Patti Schatzmann</option>
+                                </select>
+                            </div>
+
+                            <div class="amount-options">
+                                {{-- <label class="section-label">Donation Amount</label> --}}
+                                <div class="amount-buttons">
+                                    <button type="button" class="amount-btn active" data-amount="10">$10</button>
+                                    <button type="button" class="amount-btn" data-amount="25">$25</button>
+                                    <button type="button" class="amount-btn" data-amount="50">$50</button>
+                                    <button type="button" class="amount-btn" data-amount="100">$100</button>
+                                    <div class="custom-amount">
+                                        <input type="number" id="custom-amount" min="1" placeholder="Other">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group message-group">
+                                <button type="button" class="add-message-btn">+ Add a message</button>
+                                <textarea id="donation-message" class="message-textarea" placeholder="Your message..." style="display: none;"></textarea>
+                            </div>
+
+                    </div>
                     <div class="form-footer">
                         <label class="checkbox-label">
                             <input type="checkbox" id="anonymous">
@@ -146,11 +150,12 @@
 
                         <button type="submit" class="submit-btn">Continue</button>
                     </div>
-                </form>
+                    </form>
+                </div>
             </div>
 
             <!-- Payment Details Content -->
-            <div class="payment-details-content" id="paymentDetailsContent">
+            {{-- <div class="payment-details-content" id="paymentDetailsContent">
                 <button class="close-btn">×</button>
                 <h1>Final Details</h1>
                 <h2>Donation</h2>
@@ -159,11 +164,11 @@
                     <strong>Credit card processing fees</strong>
                 </div>
                 <label class="section-label">payment method</label>
-                    <div class="form-group">
-                        <select>
-                            <option value="">stripe</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <select>
+                        <option value="">stripe</option>
+                    </select>
+                </div>
 
                 <label class="section-label">total</label>
                 <div class="form-group">
@@ -206,7 +211,117 @@
                     <button type="button" class="finish-btn" id="finishButton">Finish (<span
                             id="final-amount">$0</span>)</button>
                 </div>
+            </div> --}}
+            {{-- <div class="payment-details-content" id="paymentDetailsContent">
+                <div class="payment-head">
+                    <h3>Final Details</h3>
+                </div>
+                <div class="payment-body">
+                    <div class="title">
+                        <h4>Donation</h4>
+                        <span>*$25</span>
+                    </div>
+                    <div class="detail">
+                        <h4>Credit card processing fees</h4>
+                        <div class="input-wrapper">
+                            <select name="" id="">
+                                <option value="">AMEX Card</option>
+                                <option value="">Visa $ Others</option>
+                                <option value="">US Bank Account</option>
+                                <option value="">Cash App Pay</option>
+                            </select>
+                            <span>$0.00</span>
+                        </div>
+                        <p>You pay the CC fee so 100% of your donation goes to your chosen missionary or cause.</p>
+                    </div>
+                    <div class="description">
+                        <div class="about">
+                            <h4>Add a tip to support Night Bright</h4>
+                            <p><a href="#">Why Tip?</a>Night Bright does not charge any platform fees and relies
+                                on your generosity to
+                                support this free service.</p>
+                        </div>
+                        <div class="tip-per">
+                            <select name="" id="">
+                                <option value="">0%</option>
+                                <option value="">5%</option>
+                                <option value="">10%</option>
+                                <option value="">12%</option>
+                                <option value="">15%</option>
+                                <option value="" selected>20%</option>
+                            </select>
+                        </div>
+                        <div class="authorized-wrapper">
+                            <input type="checkbox">
+                            <label for="">Allow Night Bright lnc to contact me</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-footer">
+                    <button>Finish ($28.00)</button>
+                </div>
             </div>
+             --}}
+            <div class="payment-details-content" id="paymentDetailsContent">
+                <h2>Donate</h2>
+                <button class="close-btn">×</button> <!-- Keep this to allow overlay close -->
+                <div class="payment-wrapper">
+                    <div class="payment-head">
+                        <h3>Final Details</h3>
+                    </div>
+                    <div class="payment-body">
+                        <div class="title">
+                            <h5>Donation</h5>
+                            <span id="payment-amount"><b>$0.00</b></span> <!-- ID retained for JS -->
+                        </div>
+                        <div class="detail">
+                            <h6 class="mb-3">Credit card processing fees</h6>
+                            <div class="input-wrapper form-group">
+                                <select>
+                                    <option value=""><b>Select Payment Method</b></option>
+                                    <option value="">AMEX Card</option>
+                                    <option value="">Visa & Others</option>
+                                    <option value="">US Bank Account</option>
+                                    <option value="">Cash App Pay</option>
+                                </select>
+                                <span><b>$0.00</b></span>
+                            </div>
+                            <p>You pay the CC fee so 100% of your donation goes to your chosen missionary or cause.</p>
+                        </div>
+                        <div class="description">
+                            <div class="about">
+                                <h5>Add a tip to support Night Bright</h5>
+                                <p>
+                                    <a href="#">Why Tip?</a>
+                                    Night Bright does not charge any platform fees and relies on your generosity to
+                                    support
+                                    this free service.
+                                </p>
+                            </div>
+                            <div class="tip-per form-group">
+                                <select id="tip-select"> <!-- You can update your JS to read this -->
+                                    <option value="0">0%</option>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="12">12%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20" selected>20%</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="authorized-wrapper">
+                            <input type="checkbox" id="allow-contact">
+                            <label for="allow-contact">Allow Night Bright Inc to contact me</label>
+                        </div>
+                    </div>
+                    <div class="payment-footer">
+                        <button type="button" class="back-btn" id="backButton">Back</button>
+                        <button type="button" class="finish-btn" id="finishButton">Finish (<span
+                                id="final-amount">$0.00</span>)</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -233,6 +348,8 @@
             const backButton = document.getElementById('backButton');
             const finishButton = document.getElementById('finishButton');
             const missionarySelect = document.getElementById('missionary-select');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+
 
             // Amount selection
             const amountBtns = document.querySelectorAll('.amount-btn');
@@ -427,6 +544,12 @@
 
                 isProcessing = false;
             }
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
         });
     </script>
 </body>

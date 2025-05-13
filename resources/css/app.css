@@ -109,6 +109,20 @@ header .nav-links ul li a.active {
     object-fit: cover;
 }
 
+.donate-tabs .nav-item a {
+    background: transparent;
+    border: 1px solid #3d9be9;
+    color: #000;
+    padding: 10px 65px;
+    border-radius: 20px;
+}
+
+.donate-tabs .nav-item .active {
+    background: #d1e7fa;
+    border: none;
+}
+
+
 .donate-org-name {
     font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: bold;
@@ -168,10 +182,11 @@ header .nav-links ul li a.active {
     font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
+/*
 .donate-tabs-list .donate-tab-link.active {
     color: #a5824f;
     border-bottom: 3px solid #a5824f;
-}
+} */
 
 /* Donation Form Overlay */
 .donation-form-overlay {
@@ -199,9 +214,11 @@ header .nav-links ul li a.active {
     height: 100%;
     background-color: #fff;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 3s ease;
     overflow-y: auto;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .donation-form-overlay.active .donation-form-container {
@@ -212,6 +229,116 @@ header .nav-links ul li a.active {
 .payment-details-content {
     padding: clamp(1.5rem, 4vw, 2.5rem);
     position: relative;
+}
+
+.payment-details-content .payment-wrapper {
+    border-radius: 14px;
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+    /* padding: 25px; */
+}
+
+.payment-details-content h2 {
+    color: #be965a;
+}
+
+.payment-details-content .payment-wrapper .payment-head {
+    border-bottom: 1px solid #d3d3d3;
+    padding: 25px 25px 0;
+}
+
+/* .payment-details-content .payment-wrapper .payment-body {
+    padding: 25px;
+} */
+
+.payment-details-content .payment-wrapper .payment-body .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 25px 25px 0;
+
+    span {
+        display: block;
+    }
+}
+
+.payment-details-content .payment-wrapper .payment-body .detail {
+    /* border-bottom: 1px solid #d3d3d3; */
+    /* margin-bottom: 30px; */
+    padding: 0 25px;
+
+    p {
+        border-bottom: 1px solid #d3d3d3;
+        padding-bottom: 15px;
+        margin-bottom: 0;
+    }
+}
+
+.payment-details-content .payment-wrapper .payment-body .detail .form-group select {
+    max-width: 60%;
+    width: 100%;
+    margin-bottom: 0;
+    border: 1px solid #000;
+}
+
+.payment-details-content .payment-wrapper .payment-body .detail .form-group select:focus {
+    outline: none;
+    background: #a5824f;
+}
+
+.payment-details-content .payment-wrapper .payment-body .detail .input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    span {
+        display: block;
+    }
+}
+
+.payment-details-content .payment-wrapper .payment-body .description {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    background: #fffedf;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    margin-top: 15px;
+
+    a {
+        color: #be965a;
+    }
+}
+
+.payment-details-content .payment-wrapper .payment-body .description .about {
+    max-width: 70%;
+    padding: 0 0 0 25px;
+}
+
+.payment-details-content .payment-wrapper .payment-body .description .tip-per {
+    padding: 0 25px 0 0;
+    flex: 1;
+}
+
+.payment-details-content .payment-wrapper .payment-body .description .tip-per select {
+    width: 100%;
+}
+
+.payment-details-content .payment-wrapper .payment-body .description .tip-per select:focus {
+    outline: none;
+    background: #a5824f;
+}
+
+.payment-details-content .payment-wrapper .payment-body .authorized-wrapper {
+    padding: 0 25px;
+}
+
+.payment-details-content .payment-wrapper .payment-footer {
+    padding: 25px;
+    border-top: 1px solid #d3d3d3;
+}
+
+.donation-form-content h2 {
+    font-size: 15px;
 }
 
 .payment-details-content {
@@ -226,7 +353,7 @@ header .nav-links ul li a.active {
     background: none;
     border: none;
     cursor: pointer;
-    color: #333;
+    color: #be965a;
 }
 
 h1 {
@@ -239,6 +366,10 @@ h2 {
     font-size: clamp(1rem, 3vw, 1.25rem);
     color: #666;
     margin-bottom: clamp(1rem, 3vw, 1.875rem);
+
+    span {
+        color: #be965a;
+    }
 }
 
 h3 {
@@ -257,40 +388,61 @@ h3 {
     padding: clamp(0.5rem, 1.5vw, 0.625rem) clamp(0.75rem, 2vw, 1.25rem);
     background: none;
     border: none;
-    border-bottom: 3px solid transparent;
+    /* border-bottom: 3px solid transparent; */
     font-size: clamp(0.875rem, 2.5vw, 1rem);
     cursor: pointer;
-    color: #666;
+    color: #be965a;
+    max-width: 50%;
+    width: 100%;
 }
 
 .tab-btn.active {
-    color: #be965a;
-    border-bottom-color: #be965a;
-    font-weight: bold;
+    color: #fff;
+    background: #be965a;
+    /* border-bottom-color: #be965a; */
+    /* font-weight: bold;. */
 }
 
-.form-row {
+.tab-btn:hover {
+    text-decoration: underline;
+    background: #be965a;
+    color: #fff;
+}
+
+.form-inputs {
     display: flex;
     gap: clamp(0.75rem, 2.5vw, 1.25rem);
     margin-bottom: clamp(0.75rem, 2.5vw, 1.25rem);
 }
 
-.form-group {
-    flex: 1;
-    position: relative;
-    margin-bottom: clamp(0.75rem, 2.5vw, 1.25rem);
+.form-inputs .form-group {
+    max-width: 50%;
+    width: 100%;
+}
+
+.form-group select {
+    /* max-width: 50%;
+    width: 100%; */
+    /* margin-bottom: clamp(0.75rem, 2.5vw, 1.25rem); */
+    margin-bottom: 15px;
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
     padding: clamp(0.625rem, 2vw, 0.75rem) clamp(0.75rem, 2.5vw, 0.9375rem);
-    border: 1px solid #ddd;
+    border: 1px solid #be965a;
     border-radius: 0.25rem;
     font-size: clamp(0.875rem, 2.5vw, 1rem);
 }
 
-.form-group label {
+.form-group input,
+.form-group select:focus {
+    border: none;
+    outline: 1px solid red;
+}
+
+/* .form-group label {
     position: absolute;
     left: clamp(0.75rem, 2vw, 0.9375rem);
     top: clamp(0.625rem, 2vw, 0.75rem);
@@ -299,12 +451,12 @@ h3 {
     pointer-events: none;
     background: transparent;
     padding: 0 0.3125rem;
-}
+} */
 
-.form-group input:focus + label,
-.form-group input:not(:placeholder-shown) + label,
-.form-group select:focus + label,
-.form-group select:not([value=""]) + label {
+.form-group input:focus+label,
+.form-group input:not(:placeholder-shown)+label,
+.form-group select:focus+label,
+.form-group select:not([value=""])+label {
     top: clamp(-0.5rem, -1vw, -0.625rem);
     left: clamp(0.5rem, 1.5vw, 0.625rem);
     font-size: clamp(0.625rem, 1.5vw, 0.75rem);
@@ -329,6 +481,7 @@ h3 {
 }
 
 .amount-options {
+    /* display: flex; */
     margin-bottom: clamp(1rem, 3vw, 1.5625rem);
 }
 
@@ -339,15 +492,22 @@ h3 {
     flex-wrap: wrap;
 }
 
+.amount-buttons .active {
+    background: #be965a;
+    color: #fff;
+}
+
 .amount-btn {
-    padding: clamp(0.5rem, 1.5vw, 0.625rem) clamp(0.75rem, 2vw, 1.25rem);
-    background: #f5f5f5;
-    border: 1px solid #ddd;
+    /* padding: clamp(0.5rem, 1.5vw, 0.625rem) clamp(0.75rem, 2vw, 1.25rem); */
+    background: transparent;
+    border: 1px solid #be965a;
     border-radius: 0.25rem;
     cursor: pointer;
     font-size: clamp(0.875rem, 2.5vw, 1rem);
-    flex: 1;
-    min-width: 4rem;
+    /* flex: 1; */
+    width: 74px;
+    height: 40px;
+    color: #be965a;
 }
 
 .amount-btn:hover {
@@ -361,11 +521,13 @@ h3 {
 }
 
 .custom-amount input {
-    width: 100%;
+    width: 74px;
+    height: 40px;
     padding: clamp(0.625rem, 2vw, 0.75rem) clamp(0.75rem, 2.5vw, 0.9375rem);
-    border: 1px solid #ddd;
+    border: 1px solid #be965a;
+    color: #be965a;
     border-radius: 0.25rem;
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-size: 14px;
 }
 
 .add-message-btn {
@@ -392,12 +554,14 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: clamp(1rem, 3vw, 1.875rem);
+    padding: 25px;
+    border-top: 1px solid #d3d3d3;
+    /* margin-top: clamp(1rem, 3vw, 1.875rem); */
 }
 
 .checkbox-label {
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
     cursor: pointer;
     color: #666;
     position: relative;
@@ -424,7 +588,7 @@ h3 {
     border-radius: 0.25rem;
 }
 
-.checkbox-label input:checked ~ .checkmark {
+.checkbox-label input:checked~.checkmark {
     background: #be965a;
     border-color: #be965a;
 }
@@ -442,7 +606,7 @@ h3 {
     transform: rotate(45deg);
 }
 
-.checkbox-label input:checked ~ .checkmark:after {
+.checkbox-label input:checked~.checkmark:after {
     display: block;
 }
 
@@ -453,7 +617,7 @@ h3 {
     background: #be965a;
     color: white;
     border: none;
-    border-radius: 1.5625rem;
+    border-radius: 4px;
     font-size: clamp(0.875rem, 2.5vw, 1rem);
     cursor: pointer;
     font-weight: bold;
@@ -592,6 +756,7 @@ h3 {
 }
 
 @media (max-width: 768px) {
+
     /* Header Navigation */
     .hamburger {
         display: block;
@@ -647,7 +812,10 @@ h3 {
     }
 
     .donate-tabs-list {
-        display: flex;
+        /* display: flex; */
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
         overflow-x: auto;
         white-space: nowrap;
     }
@@ -671,6 +839,10 @@ h3 {
         width: 100%;
     }
 
+    .custom-amount input {
+        width: 100%;
+    }
+
     .tip-options {
         flex-direction: column;
     }
@@ -683,6 +855,7 @@ h3 {
     .payment-footer {
         flex-direction: column;
         gap: clamp(0.75rem, 2vw, 0.9375rem);
+        align-items: start;
     }
 
     .submit-btn,
@@ -751,4 +924,27 @@ h3 {
     .donation-form-container {
         padding: 0.5rem;
     }
+}
+
+
+.donation-form-container .slide-wrapper {
+    /* padding: 25px; */
+    border-radius: 14px;
+    box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+}
+
+.donation-form-container .slide-wrapper .wrapper-head {
+    padding: 25px 25px 10px;
+    border-bottom: 1px solid #d3d3d3;
+    margin-bottom: 10px;
+}
+
+.donation-form-container .slide-wrapper .wrapper-body {
+    padding: 0 25px;
+    /* border-bottom: 1px solid #000; */
+}
+
+.donation-form-container .slide-wrapper .donation-type-tabs {
+    border: 1px solid #be965a;
+    border-radius: 4px;
 }
