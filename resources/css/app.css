@@ -139,7 +139,7 @@ header .nav-links ul li a.active {
 }
 
 .donate-btn {
-    padding: clamp(0.625rem, 2vw, 0.75rem) clamp(1.5rem, 4vw, 2.5rem);
+    padding: 5px 40px;
     font-weight: 500;
     background: #be965a;
     color: #fff;
@@ -153,8 +153,8 @@ header .nav-links ul li a.active {
 }
 
 .donate-btn img {
-    height: clamp(1.5rem, 4vw, 2.5rem);
-    width: clamp(1.5rem, 4vw, 2.5rem);
+    height: 40px;
+    width: 40px;
     object-fit: contain;
     transition: transform 0.5s ease;
 }
